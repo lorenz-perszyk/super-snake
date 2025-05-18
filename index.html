@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="./assets/supersnake_logo.png" alt="Super Snake Logo" class="game-logo">
+
+    <div class="game-container">
+        <!-- Power indicator light -->
+        <div class="power-indicator"></div>
+
+        <!-- Game header -->
+        <div class="game-header">
+            <h1>Super Snake</h1>
+            <div class="score-container">
+                <div class="score-row">
+                    <span>SCORE:<span id="score">0</span></span>
+                    <span class="value-display">VALUE:<span id="currentValue">10</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game screen -->
+        <div class="game-screen">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Power-ups display -->
+        <div class="active-power-ups">
+            <h2>POWER-UP:</h2>
+            <div id="activePowerUps"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-row">
+                <!-- Arrow Keys -->
+                <div class="arrow-keys">
+                    <div class="arrow-row">
+                        <div class="key-icon">▲</div>
+                    </div>
+                    <div class="arrow-row">
+                        <div class="key-icon">◀</div>
+                        <div class="key-icon">▼</div>
+                        <div class="key-icon">▶</div>
+                    </div>
+                    <div class="arrow-label">MOVE</div>
+                </div>
+
+                <!-- Space key -->
+                <div class="space-key">
+                    <div class="key-icon">SPACE</div>
+                    <div class="space-label">PAUSE</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>GAME OVER</h2>
+            <p>SCORE: <span id="finalScore">0</span></p>
+            <div class="name-input">
+                <input type="text" id="playerName" placeholder="YOUR NAME">
+            </div>
+            <div class="modal-buttons">
+                <button id="saveScore">SAVE</button>
+                <button id="playAgain">RETRY</button>
+                <button id="showHighscores">SCORES</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Highscores Modal -->
+    <div id="highscoresModal" class="modal">
+        <div class="modal-content">
+            <h2>TOP SCORES</h2>
+            <div id="highscoresList"></div>
+            <button id="closeHighscores">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div id="pauseModal" class="modal">
+        <div class="modal-content">
+            <h2>PAUSED</h2>
+            <p>PRESS SPACEBAR</p>
+            <p>TO RESUME</p>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
